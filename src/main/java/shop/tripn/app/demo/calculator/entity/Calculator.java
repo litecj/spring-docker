@@ -1,8 +1,8 @@
 package shop.tripn.app.demo.calculator.entity;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.Id;
 
 @Data
 public final class Calculator {
