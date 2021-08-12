@@ -8,17 +8,19 @@ import shop.tripn.app.demo.calculator.entity.User;
 import shop.tripn.app.demo.calculator.service.UserServiceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController@RequiredArgsConstructor
 public class UserController {
     private final UserServiceImpl userService;
 
-    @GetMapping("/users/all")
-    public List<User> findAll (){
-        return userService.findAll();   }
 
-    @GetMapping("/users/name/{name}")
-    public List<User> findAllByName(@PathVariable String name){
+    @GetMapping("/all")
+    public List<User> findAll(){return userService.findAll();    }
+    @GetMapping("/name/{name}")
+    public List<User> findAllByName(String name){
         return userService.findAllByName(name);
     }
+    @GetMapping("/id/{id}")
+    public Optional<User> findById(long id) { return userService.findById(id);    }
 }
