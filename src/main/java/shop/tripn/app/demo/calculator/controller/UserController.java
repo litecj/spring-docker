@@ -20,9 +20,9 @@ public class UserController {
     @GetMapping("/all")
     public List<User> findAll(){return userService.findAll();    }
     @GetMapping("/name/{name}")
-    public List<User> findAllByName(String name){
+    public List<User> findAllByName(@PathVariable String name){
         return userService.findAllByName(name);
     }
     @GetMapping("/id/{id}")
-    public Optional<User> findById(long id) { return userService.findById(id);    }
+    public Optional<User> findById(@PathVariable long id) { return userService.findById(id);    }
 }

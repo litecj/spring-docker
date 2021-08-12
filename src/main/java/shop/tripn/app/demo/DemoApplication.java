@@ -32,6 +32,7 @@ public class DemoApplication implements CommandLineRunner {
 		userRepository.save(new User(2,"b", "bob", "b@", "1",new Date()));
 		userRepository.save(new User(3,"c", "hello", "c@", "1",new Date()));
 		userRepository.save(new User(4,"d", "이순신", "d@", "1",new Date()));
+		userRepository.save(new User(5,"e", "Hung", "e@", "1",new Date()));
 		List<User> users = userRepository.findAll();
 		for (User u : users) {
 			System.out.println(u.toString());}
@@ -44,9 +45,12 @@ public class DemoApplication implements CommandLineRunner {
 		itemRepository.save(new Item(2, "alice",50000,"say Hello",new Date()));
 		itemRepository.save(new Item(3, "any",89000,"애니콜",new Date()));
 		itemRepository.save(new Item(4, "galaxy-Tab",1500000,"2021 신제품",new Date()));
+		itemRepository.save(new Item(5, "galaxy-Note",1000000,"2020 신제품",new Date()));
 		List<Item> items = itemRepository.findAll();
 		for (Item i : items) {
 			System.out.println(i.toString());}
 		System.out.println("galaxy만 출력하시오");
+		for (Item i : itemRepository.findAllByItemName("galaxy")) {
+			System.out.println(i.toString());}
 	}
 }
