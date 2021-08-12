@@ -3,6 +3,7 @@ package shop.tripn.app.demo.calculator.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import shop.tripn.app.demo.calculator.entity.User;
 import shop.tripn.app.demo.calculator.service.UserServiceImpl;
@@ -10,7 +11,8 @@ import shop.tripn.app.demo.calculator.service.UserServiceImpl;
 import java.util.List;
 import java.util.Optional;
 
-@RestController@RequiredArgsConstructor
+@RestController @RequiredArgsConstructor
+@RequestMapping("/users")
 public class UserController {
     private final UserServiceImpl userService;
 
